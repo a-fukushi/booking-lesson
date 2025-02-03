@@ -1,0 +1,14 @@
+   <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const selectedDate = new Date(document.getElementById("date").value);
+            const dayOfWeek = selectedDate.getDay();
+            if (dayOfWeek === 0 || dayOfWeek === 6) {
+                alert("予約は平日のみ受け付けています。");
+                return;
+            }
+            alert("予約が完了しました！\n\nお名前: " + document.getElementById("name").value + "\nメール: " + document.getElementById("email").value + "\nレッスン種類: " + document.getElementById("lesson-type").value + "\n日付: " + document.getElementById("date").value + "\n時間: " + document.getElementById("time").value);
+        });
+    </script>
+</body>
+</html>
